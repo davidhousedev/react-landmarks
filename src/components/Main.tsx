@@ -29,7 +29,11 @@ const Main: React.FC<{
 
   if (ComponentOverride) {
     return (
-      <ComponentOverride role="main" {...props}>
+      <ComponentOverride
+        role="main"
+        aria-labelledby={labelledByTargetId}
+        {...props}
+      >
         {render({ labelledByTargetId })}
       </ComponentOverride>
     )

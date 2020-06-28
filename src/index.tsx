@@ -14,13 +14,13 @@ const App = () => {
         )}
       />
       <Main
-        as={P}
+        as={Div}
         render={({ labelledByTargetId }) => (
           <>
             <h2 id={labelledByTargetId}>
-              This main is rendered as a paragraph!
+              The component can be customized with as
             </h2>
-            <p>Who knows why you'd do this but whatever</p>
+            <p>Div role main woop woop</p>
           </>
         )}
       />
@@ -28,6 +28,8 @@ const App = () => {
   )
 }
 
-const P: React.FC = ({ children }) => <p>{children}</p>
+const Div: React.FC = ({ children, ...props }) => (
+  <div {...props}>{children}</div>
+)
 
 ReactDom.render(<App />, document.getElementById('app'))
